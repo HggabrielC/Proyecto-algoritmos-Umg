@@ -1,0 +1,21 @@
+13;Ana López;32156489;ana.lopez@gmail.com;500
+14;Carlos Pérez;78541236;carlos.perez@hotmail.com;300
+15;Lucía García;65198745;lucia.garcia@yahoo.com;1000
+16;Pedro Rodríguez;85214796;pedro.rod@gmail.com;200
+17;María Hernández;74125896;maria.hernandez@gmail.com;750
+18;Sofía Martínez;96325874;sofia.mtz@hotmail.com;1200
+19;Diego Gómez;74123698;diego.gomez@gmail.com;300
+20;Laura Fernández;36985214;laura.fernandez@yahoo.com;900
+21;David Ruiz;14785236;david.ruiz@hotmail.com;250
+22;Marta Sánchez;96325841;marta.sanchez@gmail.com;1100
+23;Francisco Moreno;85214763;fran.moreno@yahoo.com;150
+24;Elena Torres;32147852;elena.torres@gmail.com;1300
+25;Raúl Jiménez;78945612;raul.jimenez@hotmail.com;2000
+26;Julia Romero;25896314;julia.romero@gmail.com;400
+27;Sergio Vargas;95175328;sergio.vargas@yahoo.com;800
+28;Claudia Castillo;14789632;claudia.castillo@gmail.com;950
+29;Fernando Peña;75395124;fernando.pena@hotmail.com;100
+30;Irene Ortiz;96325478;irene.ortiz@gmail.com;650
+31;Alejandro Ríos;21478563;alejandro.rios@yahoo.com;1300
+32;Paula Delgado;87452136;paula.delgado@gmail.com;1200
+
