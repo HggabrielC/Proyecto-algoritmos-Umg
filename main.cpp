@@ -17,6 +17,7 @@ string TEMP="E:/Mariano/Segundo Semestre/Algoritmos/Proyecto final/Proyecto-algo
 // Función para mostrar el menú
 char menu() {
     char opcion = 0;
+    cout << "--------------------------------------" << endl;
     cout << "Ingrese la opcion\n";
     cout << "1). Crear cuentas monetarias\n";
     cout << "2). Operar depositos\n";
@@ -24,6 +25,7 @@ char menu() {
     cout << "4). Transferencias\n";
     cout << "5). Consulta saldo de cuenta\n";
     cout << "6). Salir\n";
+    cout << "--------------------------------------" << endl;
     cin >> opcion;
     return opcion;
 }
@@ -133,25 +135,32 @@ int main() {
         switch (opcion) {
             case '1':
                 cout << "Has seleccionado: Crear cuentas monetarias" << endl;
+                cout << "--------------------------------------" << endl;
                 break;
             case '2':
                 cout << "Has seleccionado: Operar depositos" << endl;
+                cout << "--------------------------------------" << endl;
                 break;
             case '3':
                 cout << "Has seleccionado: Operar retiros" << endl;
                 cout << retiros() << endl;
+                cout << "--------------------------------------" << endl;
                 break;
             case '4':
                 cout << "Has seleccionado: Transferencias" << endl;
+                cout << "--------------------------------------" << endl;
                 break;
             case '5':
                 cout << "Has seleccionado: Consulta saldo de cuenta" << endl;
+                cout << "--------------------------------------" << endl;
                 break;
             case '6':
                 cout << "Saliendo del programa..." << endl;
+                cout << "--------------------------------------" << endl;
                 break;
             default:
                 cout << "Opcion no valida, por favor intente nuevamente." << endl;
+                cout << "--------------------------------------" << endl;
         }
     } while (opcion != '6');
     return 0;
