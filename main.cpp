@@ -126,6 +126,45 @@ string retiros() {
         return "Cuenta no encontrada.";
     }
 }
+// Función para consultar el saldo de una cuenta
+string consultaSaldo() {
+    string numeroCuenta, linea;
+    bool cuentaEncontrada = false;
+
+    ifstream cuentas(CTASMONETARIAS);
+    if (!cuentas.is_open()) {
+        return "Error: No se pudo abrir el archivo de cuentas.";
+    }
+
+    cout << "Ingrese el numero de cuenta: ";
+    cin >> numeroCuenta;
+
+    while (getline(cuentas, linea)) {
+        stringstream ss(linea);
+        string cuenta, nombre, telefono, correo, saldo;
+
+        getline(ss, cuenta, ';');
+        getline(ss, nombre, ';');
+        getline(ss, telefono, ';');
+        getline(ss, correo, ';');
+        getline(ss, saldo, ';');
+
+        if (cuenta == numeroCuenta) {
+            cuentaEncontrada = true;
+            cout << "Cuenta encontrada: " << nombre << endl;
+            cout << "Saldo actual: " << saldo << endl;
+            break;
+        }
+    }
+
+    cuentas.close();
+
+    if (!cuentaEncontrada) {
+        return "Error: Cuenta no encontrada.";
+    }
+    return "Consulta de saldo realizada exitosamente.";
+}
+
 
 // Función principal con ciclo para mostrar el menú
 int main() {
@@ -152,6 +191,7 @@ int main() {
                 break;
             case '5':
                 cout << "Has seleccionado: Consulta saldo de cuenta" << endl;
+                cout << consultaSaldo() << endl;
                 cout << "--------------------------------------" << endl;
                 break;
             case '6':
