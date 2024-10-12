@@ -205,3 +205,74 @@ int main() {
     } while (opcion != '6');
     return 0;
 }
+//Funcion para la Creación de Cuentas Monetarias
+    //Verifica que el número de cuenta sea exactamente de 10 dígitos y solo contenga números
+    return numeroCuenta.length() == 10 && all_of(numeroCuenta.begin(), numeroCuenta.end(), ::isdigit);
+}
+
+bool validarTelefono(const string &telefono) {
+    // Verifica que el teléfono tenga 8 dígitos y solo contenga números
+    return telefono.length() == 8 && all_of(telefono.begin(), telefono.end(), ::isdigit);
+}
+
+bool validarCorreo(const string &correo) {
+    // Verifica que el correo contenga un "@" y un "."
+    size_t arroba = correo.find('@');
+    size_t punto = correo.find('.', arroba);
+    return arroba != string::npos && punto != string::npos && punto > arroba;
+}
+
+string crearCuenta() {
+    string numeroCuenta, nombre, telefono, correo, saldoInicial;
+
+    // Pedir número de cuenta y validarlo
+    cout << "Ingrese el numero de cuenta (10 digitos): ";
+    cin >> numeroCuenta;
+    if (!validarNumeroCuenta(numeroCuenta)) {
+        return "Error: Numero de cuenta invalido. Debe ser de 10 digitos.";
+    }
+
+    // Pedir el nombre
+    cout << "Ingrese el nombre del titular: ";
+    cin.ignore(); // Limpiar buffer
+    getline(cin, nombre);
+    if (nombre.empty()) {
+        return "Error: El nombre no puede estar vacio.";
+    }
+
+    // Pedir el teléfono y validarlo
+    cout << "Ingrese el telefono (8 digitos): ";
+    cin >> telefono;
+    if (!validarTelefono(telefono)) {
+        return "Error: Telefono invalido. Debe ser de 8 digitos.";
+    }
+
+    // Pedir el correo y validarlo
+    cout << "Ingrese el correo electronico: ";
+    cin >> correo;
+    if (!validarCorreo(correo)) {
+        return "Error: Correo electronico invalido.";
+    }
+
+    // Pedir saldo inicial y validarlo
+    cout << "Ingrese el saldo inicial: ";
+    cin >> saldoInicial;
+    try {
+        if (stoi(saldoInicial) < 0) {
+            return "Error: El saldo inicial no puede ser negativo.";
+        }
+    } catch (invalid_argument &e) {
+        return "Error: Saldo invalido.";
+    }
+
+    // Almacenar la cuenta en el archivo
+    ofstream cuentas(CTASMONETARIAS, ios::app);
+    if (!cuentas.is_open()) {
+        return "Error: No se pudo abrir el archivo de cuentas.";
+    }
+
+    cuentas << numeroCuenta << ";" << nombre << ";" << telefono << ";" << correo << ";" << saldoInicial << endl;
+    cuentas.close();
+
+    return "Cuenta creada exitosamente.";
+}
